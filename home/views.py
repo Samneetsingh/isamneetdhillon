@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from django.views import View
 from django.contrib.auth.decorators import login_required
@@ -6,5 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 
 class Home(View):
+    template_name = 'home.html'
+
     def get(self, request):
-        return HttpResponse("<h2>Begin</h2><h2>End</h2>")
+        return render_to_response(template_name=self.template_name)
