@@ -2,14 +2,23 @@
 <html lang="en">
 <html>
    <head>
+       <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <!-- jQuery library -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <!-- Latest compiled JavaScript -->
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <meta charset="UTF-8">
-      <title></title>
+      <title> {{ title }} </title>
       {% block head %}
       {% endblock %}
    </head>
+   {% include "navigation.html" %}
    <body>
-      {% block body %}
-      {% endblock %}
+   <div class="container">
+       {% block body %}
+       {% endblock %}
+   </div>
    </body>
 </html>
 
