@@ -27,12 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR + STATIC_URL
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -63,10 +57,19 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'isamneetdhillon.urls'
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'root')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static', 'dirs'),
+)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ STATIC_ROOT + 'common/templates/'],
+        'DIRS': [ os.path.join(STATIC_ROOT, 'common/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

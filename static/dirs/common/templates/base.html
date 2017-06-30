@@ -14,11 +14,15 @@
       {% endblock %}
    </head>
    {% include "navigation.html" %}
+   {% load static %}
    <body>
+
    <div class="container">
        {% block body %}
        {% endblock %}
+       {% include "footer.html" %}
    </div>
+
    </body>
 </html>
 
